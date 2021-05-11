@@ -11,6 +11,14 @@ function expect(actualValue) {
       } else {
         console.log("Failed :(")
       }
+    },
+    toBeAnInstanceOf: (expectedValue) =>{
+      if(actualValue instanceof expectedValue  ){
+        console.log("Pass!")
+      } else{
+        console.log("Fail!")
+      }
+      
     }
   }
 }

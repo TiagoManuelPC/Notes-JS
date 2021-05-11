@@ -10,12 +10,15 @@
   <header>
     <h1>NotePad</h1>
     </header>
-  <div id="new-note">
-    <button type="button" id="create-note"> Add Note </button>
-    <div hidden id="save-note">
-      <textarea id="textInput" size="100" ></textarea>
-      <button type="button" id="submit-note" value="Save parrot" > Save Note</button>
-    </div>
+  <div>
+    <form id="select-city">
+      <input id="create-note" type="text" placeholder="Nothing"></input>
+      <input type="submit" value="New Note"></input>
+    </form>
   </div>
+  <script src="../js/src/note.js"></script>
+  <script src="../js/src/notePad.js"></script>
+  <script src="../../TestingFramework/ourRspec.js"></script>
+  
 </body>
 </html>
