@@ -6,7 +6,7 @@ class NotePad {
   add(text){
   let note = new Note(text)
     this.notes.push(note)
-    console.log(this.notes)
+  return note
   }
   
   showNotes() {
