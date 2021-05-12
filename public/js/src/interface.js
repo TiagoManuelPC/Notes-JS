@@ -12,16 +12,38 @@ document.addEventListener("DOMContentLoaded", function() {
     notepad.add(text)
     let abbText = notepad.display()
     let li = document.createElement("li")
-    li.innerHTML = `<a id="${index}" href="#${index}">${abbText}</a>`
+    li.setAttribute("id", `m${index}`)
+    li.innerHTML = `<a href="#${index}">${abbText}</a>`
     index ++ 
     document.querySelector("#display").append(li)
     document.querySelector("#create-note").value = ''
     // tester = true
   })
   // if(tester) {
-    document.getElementById("[id='0']").addEventListener('click', function() {
-      console.log("hashchange")
-    })
-  // }
+    document
+      .querySelector("#display")
+      .querySelectorAll("li")
+      .addEventListener('click', makeUrlChangeShowAnimalForCurrentPage())
+    
+    function makeUrlChangeShowAnimalForCurrentPage() {
+      window.addEventListener("hashchange", () => {
+        document
+        .querySelector(`#m${location.href.split("#")[1]}`)
+        .innerHTML = notepad.notes[location.href.split("#")[1]].text;
+        retract = document.createElement("BUTTON")
+        retract.setAttribute("id","retract")
+        document
+        .querySelector(`#m${location.href.split("#")[1]}`)
+        .append(retract)
+        document.querySelector("#retract").addEventListener("click", function() {
+          // note = notepad.notes[location.href.split("#")[1]].abbreviate()
+          // console.log(note)
+          // // document.querySelector(`#m${location.href.split("#")[1]}`).innerText = note
+          // document.querySelector(`#m${location.href.split("#")[1]}`).innerHTML = `<a href="#${location.href.split("#")[1]}">${note}</a>`
+        })
+      });
+    };
+
+
 
 })
