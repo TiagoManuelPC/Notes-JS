@@ -7,43 +7,38 @@ document.addEventListener("DOMContentLoaded", function() {
   var tester = false
   const notepad = new NotePad();
 
+  function displayAllNotes(){
+    document.querySelector("ul").innerHTML = ""
+    for(let i = 0; i < notepad.notes.length; i++){
+      let abbText = notepad.notes[i].abbreviate()
+      console.log(notepad.notes[i])
+      console.log(abbText)
+      let li = document.createElement("li")
+      li.setAttribute("id", `m${i}`)
+      li.innerHTML = `<a href="#${i}">${abbText}</a>` 
+      document.querySelector("#display").append(li)
+    }
+  }
+
   document.querySelector("#submit-button").addEventListener('click', function(){
     let text = document.querySelector("#create-note").value
     notepad.add(text)
-    let abbText = notepad.display()
-    let li = document.createElement("li")
-    li.setAttribute("id", `m${index}`)
-    li.innerHTML = `<a href="#${index}">${abbText}</a>`
-    index ++ 
-    document.querySelector("#display").append(li)
+    displayAllNotes()
     document.querySelector("#create-note").value = ''
-    // tester = true
   })
-  // if(tester) {
     document
       .querySelector("#display")
       .querySelectorAll("li")
-      .addEventListener('click', makeUrlChangeShowAnimalForCurrentPage())
+      .addEventListener('click', urlChange())
     
-    function makeUrlChangeShowAnimalForCurrentPage() {
+    function urlChange() {
       window.addEventListener("hashchange", () => {
+        displayAllNotes()
+        let index_page = `#m${location.href.split("#")[1]}`
+
         document
-        .querySelector(`#m${location.href.split("#")[1]}`)
+        .querySelector(index_page)
         .innerHTML = notepad.notes[location.href.split("#")[1]].text;
-        retract = document.createElement("BUTTON")
-        retract.setAttribute("id","retract")
-        document
-        .querySelector(`#m${location.href.split("#")[1]}`)
-        .append(retract)
-        document.querySelector("#retract").addEventListener("click", function() {
-          // note = notepad.notes[location.href.split("#")[1]].abbreviate()
-          // console.log(note)
-          // // document.querySelector(`#m${location.href.split("#")[1]}`).innerText = note
-          // document.querySelector(`#m${location.href.split("#")[1]}`).innerHTML = `<a href="#${location.href.split("#")[1]}">${note}</a>`
-        })
       });
     };
-
-
-
 })
