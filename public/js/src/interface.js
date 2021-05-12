@@ -7,8 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
   const notepad = new NotePad();
 
   document.querySelector("#submit-button").addEventListener('click', function(){
-    console.log("hi")
     let text = document.querySelector("#create-note").value
     notepad.add(text)
+    let abbText = notepad.display()
+    let li = document.createElement("li")
+    li.innerText = abbText
+    document.querySelector("#display").append(li)
+    document.querySelector("#create-note").value = ''
   })
 })
