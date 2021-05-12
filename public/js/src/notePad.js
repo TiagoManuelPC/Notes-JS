@@ -9,8 +9,9 @@ class NotePad {
     return note
   }
   
-  showNotes() {
-    return this.notes
+  display() {
+   let x = this.notes[this.notes.length - 1].abbreviate()
+   return x
   }
 
 }
