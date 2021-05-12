@@ -2,17 +2,11 @@ class Note{
   constructor(text){
     this.text = text
   }
+  abbreviate(){
+    return this.text.slice(0, 20)
+  }
 }
 
-///-------------------------------------
-// it('creates a note', ()=>{
-//   let note = new Note;
-//   expect(note).toBeAnInstanceOf(Note)
-// })
 
-// it('contains text', ()=>{
-//   let note = new Note('Hello')
-//   expect(note.text).toEqual('Hello')
-// })
 
 

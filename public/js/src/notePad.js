@@ -4,13 +4,14 @@ class NotePad {
   }
 
   add(text){
-  let note = new Note(text)
+    let note = new Note(text)
     this.notes.push(note)
-  return note
+    return note
   }
   
-  showNotes() {
-    return this.notes
+  display() {
+   let x = this.notes[this.notes.length - 1].abbreviate()
+   return x
   }
 
 }
@@ -27,8 +28,3 @@ class NotePad {
 
 
 
-// it('stores a note', ()=>{
-//   pad = new NotePad
-//   pad.add("Hello") 
-//   expect(pad.notes[0].text).toEqual("Hello")
-// })
