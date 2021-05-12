@@ -22,9 +22,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.querySelector("#submit-button").addEventListener('click', function(){
     let text = document.querySelector("#create-note").value
+
+    if(text ===''){
+      return
+    }
     notepad.add(text)
     displayAllNotes()
     document.querySelector("#create-note").value = ''
+    
   })
     document
       .querySelector("#display")
