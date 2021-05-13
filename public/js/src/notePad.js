@@ -13,7 +13,6 @@ class NotePad {
    let x = this.notes[this.notes.length - 1].abbreviate()
    return x
   }
-
 }
 
 
