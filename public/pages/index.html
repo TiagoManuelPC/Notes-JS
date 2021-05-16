@@ -4,27 +4,54 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/src/note.js" defer ></script>
+  <script src="../js/src/notePad.js" defer ></script>
+  <script src="../js/src/interface.js" defer ></script>
+  <link rel="stylesheet" href="../css/styles.css">
   <title>Notepad</title>
 </head>
 <body>
-  <header>
-    <h1>NotePad</h1>
-    </header>
-  <div>
-    <form>
-      <input id="create-note" type="text" placeholder="Nothing"></input>
-      <input id="submit-button" type="button" value="New Note"></input>
-    </form>
-  </div>
-  <div>
-    <ul id="display">
-      <h2>Notes</h2>
+  
+  
+  <h1>NotePad</h1>
 
-    </ul>
-  </div>
-  <script src="../js/src/interface.js"></script>
-  <script src="../js/src/note.js"></script>
-  <script src="../js/src/notePad.js"></script>
+  <ol>
+    <div>
+      <div id="new-note">
+        <button type="button" id="create-note"> Create Note </button>
+        <div hidden id="save-note">
+          <textarea id="textInput" size="500" placeholder="What do you want?"></textarea>
+          <button type="button" id="submit-note" value="Save Note" > Save Note</button>
+        </div>
+      </div>
+      
+      <ul id="abbreviated-list">
+          
+      </ul>
+
+      <!-- <li id="full-text">
+      </li> -->
+
+      
+    </div>
+
+    <!-- <li>
+      <button type="button" id="allNote-button"> All Notes </button>
+    </li>
+
+    <li>Feed Pugsly, the cow.</li>
+
+    <li>Sit Down</li>
+     -->
+      
+    
+  </ol>
+    <div class="hidden" id = "fullNote">
+  <p id="alltext"></p>
+  <button type="button" id="returnallnotes">See all Notes</button>
+</div> 
+ 
+
   
 </body>
 </html>
