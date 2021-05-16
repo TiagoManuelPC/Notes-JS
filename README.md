@@ -17,8 +17,12 @@ As a programmer
 I can use shortcodes like `:fire:` that get converted into emojis like 🔥
 So I can record notes with fun little pictures
 
-toDo
+toDo:
+
 -save the notes on the localStorage
+
 -fix css to display the full notebook
+
 -fix the css to display the note on the notebook
+
 -fix css to display the notes as a string and not as a url
